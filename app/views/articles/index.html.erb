@@ -1,13 +1,10 @@
 <h1>Articles</h1>
-
 <div class="list-group">
-    <% @articles.each do |article| %>
-  <a href="" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h3 class="mb-1"><%= article.title %></h3>
-      <small class="text-muted">3 days ago</small>
-      <%= link_to  "View", article_path(article)%>
-    </div>
-  </a>
+  <% @articles.each do |article| %>
+  <%= link_to article_path(article), class: "list-group-item list-group-item-action" do %>
+  <div class="d-flex w-100 justify-content-between">
+    <h2 class="mb-1"><%= article.title %></h2>
+  </div>
+  <% end %>
   <% end %>
 </div>
